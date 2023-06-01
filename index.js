@@ -1,6 +1,9 @@
 require('dotenv').config();
+const cors = require('cors');
 const express = require('express');
 const app = express();
+
+app.use(cors());
 
 const apiKey = process.env.TCG_API_KEY;
 // console.log(apiKey);
