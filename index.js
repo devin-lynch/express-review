@@ -5,6 +5,7 @@ const app = express();
 
 app.use(cors());
 
+const PORT = process.env.PORT || 8000;
 const apiKey = process.env.TCG_API_KEY;
 // console.log(apiKey);
 
@@ -37,6 +38,6 @@ app.get('/one', (req, res) => {
 
 app.use('/cards', require('./controllers/cards.js'));
 
-app.listen(3002, () => {
-    console.log('live on 3002');
+app.listen(PORT, () => {
+    console.log(`live on ${PORT}`);
 });
